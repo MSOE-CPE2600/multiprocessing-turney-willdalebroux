@@ -1,4 +1,7 @@
 # System Programming Lab 11 Multiprocessing
+## Implementation update:
+    Used two for loops and fork to split image generation among a specified number of child processes. Added -p argument the specify number of processes. Updated scaling by implementing a zoom factor to slightly zoom in for each frame. Created a buffer to allow outfile names to be iterated.
+
 note: ran with ./mandel -x -0.746415 -y -0.184298 -m 6996 -p (processes)
 Process times:
 1 process:      10m28s
@@ -17,3 +20,6 @@ process times (no args):
 20 processes:   0m41s
 
 !(noargs.png)
+
+## Results
+    Process times exponentially decreased for both runs. Improvements from 1 to 2 processes were greater without arguments, while overall performance was increased with more processes when more arguments were specified.
