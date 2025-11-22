@@ -37,11 +37,12 @@ int main( int argc, char *argv[] )
 	int    max = 1000;
 	double scale_factor = 0.85;
 	int num_processes = 4; // default to 4 processes unless otherwise specified
+	int num_threads = 4; // default to 4 threads unless otherwise specified
 
 	// For each command line argument given,
 	// override the appropriate configuration value.
 
-	while((c = getopt(argc,argv,"x:y:s:W:H:m:o:p:h"))!=-1) {
+	while((c = getopt(argc,argv,"x:y:s:W:H:m:o:p:t:h"))!=-1) {
 		switch(c) 
 		{
 			case 'x':
@@ -67,6 +68,9 @@ int main( int argc, char *argv[] )
 				break;
 			case 'p':
 				num_processes = atoi(optarg); // handle process argument
+				break;
+			case 't':
+				num_threads = atoi(optarg); // handle thread argument
 				break;
 			case 'h':
 				show_help();
